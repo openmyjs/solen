@@ -1,0 +1,6 @@
+
+> @solen/server-stores@1.0.0 typecheck E:\git\My Project\soleNode\packages\server\stores
+> tsc --noEmit
+
+tsconfig.json(2,14): error TS6053: File '@solen/tsconfig/node.json' not found.
+ ELIFECYCLE  Command failed with exit code 2.

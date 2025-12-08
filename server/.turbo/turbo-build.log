@@ -1,0 +1,4 @@
+
+> @solen/server-stores@1.0.0 build E:\git\My Project\soleNode\packages\server\stores
+> tsc -p tsconfig.json
+

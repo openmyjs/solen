@@ -1,0 +1,22 @@
+
+> @solen/stores@1.0.0 build:package E:\git\My Project\soleNode\packages\server\stores
+> pnpm run remove:dist && unbuild
+
+
+> @solen/stores@1.0.0 remove:dist E:\git\My Project\soleNode\packages\server\stores
+> node -e "try { require('fs').rmSync('dist', {recursive: true, force: true}) } catch(e) {}" 
+
+[36mℹ[39m [36mBuilding stores[39m
+[36mℹ[39m Cleaning dist directory: [36m./dist[39m
+[32m✔[39m [32mBuild succeeded for stores[39m
+  [1mdist[22m (total size: [36m5.78 kB[39m)
+[90m  └─ dist/map/index.d.ts[1m (105 B)[22m[39m
+[90m  └─ dist/types.js[39m
+[90m  └─ dist/redis/index.d.ts[1m (865 B)[22m[39m
+[90m  └─ dist/index.d.ts[1m (862 B)[22m[39m
+[90m  └─ dist/index.js[1m (805 B)[22m[39m
+[90m  └─ dist/types.d.ts[1m (1.66 kB)[22m[39m
+[90m  └─ dist/map/index.js[1m (618 B)[22m[39m
+[90m  └─ dist/redis/index.js[1m (871 B)[22m[39m
+Σ Total dist size (byte size): [36m5.78 kB[39m
+

@@ -1,0 +1,55 @@
+{
+  "name": "@solen/server",
+  "version": "1.0.1",
+  "description": "A simple in-memory key-value store for server-side data",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openmyjs/solen.git",
+    "directory": "server"
+  },
+  "keywords": [
+    "store",
+    "storage",
+    "key-value",
+    "server"
+  ],
+  "scripts": {
+    "build:package": "pnpm run remove:dist && pnpm exec solen-packages-build",
+    "remove:dist": "node -e \"try { require('fs').rmSync('dist', {recursive: true, force: true}) } catch(e) {}\" ",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./stores": {
+      "types": "./dist/stores/index.d.ts",
+      "import": "./dist/stores/index.js",
+      "default": "./dist/stores/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@solen/packages-build": "1.0.5",
+    "@solen/tsconfig": "1.0.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3"
+  }
+}
+
