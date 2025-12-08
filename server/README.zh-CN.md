@@ -1,11 +1,12 @@
 ## @solen/server /stores
 
-[English](./README.md)
+使用文档：
+- 英文版：[docs](./src/stores/README.md)
+- 中文版：[文档](./src/stores/README.zh-CN.md)
 
-使用文档请参见 `@solen/server/stores`：
-- 统一存储：内存 / Redis，`set / get / del`，可选 TTL
-- 全局前缀：`prefix` 可配置
-- 初始化：应用启动时调用 `initStores`
-- 业务调用：直接 `import stores from '@solen/server/stores'`
+快速使用：
+- 启动初始化：`initStores({ type: 'memory' | 'redis', db?, prefix? })`
+- 业务调用：`import stores from '@solen/server/stores'; await stores.set/get/del(...)`
+- TTL：`set` 的第三个参数（毫秒），内存/Redis 一致
 
-构建产物位于 `dist/stores/*`，默认导出在 `exports["./stores"]`。
+构建产物位于 `dist/stores/*`，通过 `exports["./stores"]` 暴露。

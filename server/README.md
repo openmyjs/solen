@@ -1,11 +1,13 @@
 ## @solen/server /stores
 
-[中文](./README.zh-CN.md)
 
-API reference: `@solen/server/stores`
-- Unified storage: memory / Redis, `set / get / del`, optional TTL
-- Global prefix: configurable `prefix`
-- Init once at app start: `initStores(...)`
-- Use in code: `import stores from '@solen/server/stores'`
+API reference:
+- English: [docs](./src/stores/README.md)
+- 中文: [文档](./src/stores/README.zh-CN.md)
 
-Build outputs: `dist/stores/*`, exported via `exports["./stores"]`.
+Quick usage:
+- Init once: `initStores({ type: 'memory' | 'redis', db?, prefix? })`
+- Use API: `import stores from '@solen/server/stores'; await stores.set/get/del(...)`
+- TTL: third param of `set` (ms), works for memory & redis
+
+Build outputs: `dist/stores/*`, exposed via `exports["./stores"]`.
