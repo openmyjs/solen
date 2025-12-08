@@ -7,6 +7,8 @@ import type {
 import { createMemoryStore } from './map';
 import { createRedisStore } from './redis';
 
+let storesType: 'memory' | 'redis' = 'memory';
+
 /**
  * 全局单例的底层适配器 & key 前缀
  * - 通过 initStores 进行初始化
@@ -30,8 +32,10 @@ function initStores(options: StoreInitOptions): void {
   keyPrefix = options.prefix ?? 'solen_stores_';
 
   if (options.type === 'redis') {
+    storesType = 'redis';
     adapter = createRedisStore(options.db);
   } else {
+    storesType = 'memory';
     adapter = createMemoryStore();
   }
 }
@@ -80,6 +84,6 @@ const stores: StoreInstance = {
 };
 
 export default stores;
-export { initStores };
+export { initStores ,storesType};
 export type { StoreInstance, StoreInitOptions, StoreValue };
 
