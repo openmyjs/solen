@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // 1. 基础编译目标（兼容主流环境）
+    "target": "ES2020", // 兼容 Node.js 14+ 和现代浏览器
+    "module": "ESNext", // 纯 ES 模块（关键：替换 NodeNext）
+    "moduleResolution": "Bundler", // 纯 ES 模块解析（关键：替换 NodeNext，适配 Webpack/Vite/Rollup）
+    "lib": ["ES2020"], // 不涉及浏览器可移除 DOM
+
+    // 2. 类型声明相关（开源包核心，保留不变）
+    "declaration": true,
+
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+
+    // 3. 输出目录与源码结构（保留不变）
+
+    "removeComments": true,
+
+    // 4. 类型严格性（保留不变）
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+
+    // 5. 兼容性与优化（简化：移除 CJS 兼容配置）
+    "allowSyntheticDefaultImports": true, // 允许默认导入无默认导出的模块
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+
+    // 6. 源码映射（保留不变）
+    "sourceMap": true,
+    "inlineSources": true
+  },
+
+}

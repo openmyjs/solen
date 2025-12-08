@@ -1,0 +1,59 @@
+{
+  "name": "@solen/packages-build",
+  "version": "1.0.5",
+  "description": "A build configuration package for TypeScript projects using unbuild, with path alias replacement support",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "solen-packages-build": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "keywords": [
+    "build",
+    "unbuild",
+    "typescript",
+    "esm",
+    "build-config",
+    "bundler",
+    "path-alias",
+    "solen",
+    "openmyjs"
+
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/openmyjs/solen",
+  "bugs": "https://github.com/openmyjs/solenjs/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openmyjs/solen.git",
+    "directory": "packages-build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:package": "pnpm run remove:dist && pnpm exec unbuild",
+    "remove:dist": "node -e \"try { require('fs').rmSync('dist', {recursive: true, force: true}) } catch(e) {}\" ",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "unbuild": "^3.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@solen/tsconfig": "^1.0.0"
+  }
+}
+

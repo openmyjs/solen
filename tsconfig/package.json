@@ -1,0 +1,22 @@
+{
+  "name": "@solen/tsconfig",
+  "version": "1.0.1",
+  "homepage": "https://github.com/openmyjs/solen",
+  "bugs": "https://github.com/openmyjs/solenjs/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openmyjs/solen.git",
+    "directory": "tsconfig"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "files": [
+    "nodeESM.json"
+  ],
+  "exports": {
+    "./nodeESM.json": "./nodeESM.json"
+  }
+}
