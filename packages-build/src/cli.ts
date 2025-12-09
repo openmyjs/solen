@@ -108,17 +108,17 @@ async function runUnbuild(args: string[]) {
   if (!unbuildPath) {
     try {
       const pnpmDir = resolve(workspaceRoot, 'node_modules/.pnpm');
-      if (existsSync(pnpmDir)) {
-        const entries = readdirSync(pnpmDir);
-        const unbuildEntry = entries.find(entry => entry.startsWith('unbuild@'));
-        if (unbuildEntry) {
-          const pnpmUnbuildPath = resolve(pnpmDir, `${unbuildEntry}/node_modules/unbuild/dist/cli.mjs`);
-          if (existsSync(pnpmUnbuildPath)) {
-            unbuildPath = pnpmUnbuildPath;
+        if (existsSync(pnpmDir)) {
+          const entries = readdirSync(pnpmDir);
+          const unbuildEntry = entries.find(entry => entry.startsWith('unbuild@'));
+          if (unbuildEntry) {
+            const pnpmUnbuildPath = resolve(pnpmDir, `${unbuildEntry}/node_modules/unbuild/dist/cli.mjs`);
+            if (existsSync(pnpmUnbuildPath)) {
+              unbuildPath = pnpmUnbuildPath;
+            }
           }
         }
-      }
-    } catch {
+      } catch {
       // Continue to next strategy
     }
   }
